@@ -48,7 +48,20 @@ class TodoIndex extends Component
         }
 
         session()->flash('message', 'Todo'.$todo['title'].' berhasi di update');
-        
+
+    }
+
+    public function markProcess($todoId)
+    {
+        if($todoId){
+            $todo = todo::findOrFail($todoId);
+            $todo->update([
+                'status' => 'on-process'
+            ]);
+        }
+
+        session()->flash('message', 'Todo'.$todo['title'].' berhasi di update');
+
     }
 
     public function handleStored($todo)
