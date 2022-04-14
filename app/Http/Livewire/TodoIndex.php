@@ -47,7 +47,7 @@ class TodoIndex extends Component
             ]);
         }
 
-        session()->flash('message', 'Todo'.$todo['title'].' berhasi di update');
+        session()->flash('message', 'Todo'.$todo['title'].' berhasil di update');
 
     }
 
@@ -60,7 +60,7 @@ class TodoIndex extends Component
             ]);
         }
 
-        session()->flash('message', 'Todo'.$todo['title'].' berhasi di update');
+        session()->flash('message', 'Todo'.$todo['title'].' berhasil di update');
 
     }
 
@@ -73,7 +73,7 @@ class TodoIndex extends Component
     public function handleUpdated($todo)
     {
         # mengupdate data todo
-        session()->flash('message', 'Todo'.$todo['title'].' berhasi di update');
+        session()->flash('message', 'Todo'.$todo['title'].' berhasil di update');
     }
 }
 
