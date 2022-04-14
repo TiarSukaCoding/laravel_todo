@@ -22,8 +22,10 @@
             <td>{{ $item->detail }}</td>
             <td>{{ $item->status }}</td>
             <td>
-                @if ($item->status != 'done')
-                <button wire:click="markDone({{ $item->id }})"=ass="btn-sm-sucess">Mark As Done</button>
+                @if ($item->status == 'on-process')
+                <button wire:click="markDone({{ $item->id }})" class="btn btn-sm btn-success">Mark As Done</button>
+                @elseif ($item->status == 'waiting')
+                <button wire:click="markDone({{ $item->id }})" class="btn btn-sm btn-warning">Mark As Process</button>
                 @endif
                 <button wire:click="getTodo({{ $item->id }})" class="btn btn-sm btn-info">Edit</button>
                 <button wire:click="destroy({{ $item->id }})" class="btn btn-sm btn-danger">Delete</button>
