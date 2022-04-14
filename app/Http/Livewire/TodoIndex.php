@@ -37,6 +37,20 @@ class TodoIndex extends Component
         }
     }
 
+
+    public function markDone($todoId)
+    {
+        if($todoId){
+            $todo = todo::findOrFail($todoId);
+            $todo->update([
+                'status' => 'done'
+            ]);
+        }
+
+        session()->flash('message', 'Todo'.$todo['title'].' berhasi di update');
+        
+    }
+
     public function handleStored($todo)
     {
         # membuat data todo
