@@ -22,6 +22,7 @@
             <td>{{ $item->detail }}</td>
             <td>{{ $item->status }}</td>
             <td>
+                <button wire:click="markDone({{ $item->id }})"=ass="btn-sm-sucess">Mark As Done</button>
                 <button wire:click="getTodo({{ $item->id }})" class="btn btn-sm btn-info">Edit</button>
                 <button wire:click="destroy({{ $item->id }})" class="btn btn-sm btn-danger">Delete</button>
             </td>
